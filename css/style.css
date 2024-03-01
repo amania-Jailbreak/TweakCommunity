@@ -1,6 +1,7 @@
 body{
     background-color: #202124;
     color: #e8eaed;
+    
 }
 .navbar{
     padding-left:15px;
@@ -15,17 +16,78 @@ body{
     color: #e8eaed;
 }
 .main{
-    padding-top: 100px;
+    padding-top: 150px;
     text-align: center;
+    min-height: 100vh;
+    position: relative;/*←相対位置*/
+    box-sizing: border-box;
     
 }
 .search-box{
-
+    color: #e8eaed;
     margin-top: 20px;
     background-color: transparent;
     text-align: center;
     border: 10px;
     border: 1px solid #5f6368;
-    border-radius: 24px;
+    border-radius: 30px;
     font-size: 25px;
+    padding: 10px;
+    width: 50%;
+    height: 48px;
+    margin-bottom: 25px;
+    
+}
+.tweak-card .card-img{
+    width: 97.6%;
+    height: 100%;
+    border-radius: 26px;
+    grid-area: 1 / 1 / 4 / 2;
+    object-fit: cover;
+    padding-right: 10px;
+}
+.tweak-card{
+    text-align: left;
+    padding-left: 25%;
+    padding-right: 25%;
+    margin: 16px;
+    height: 155px;
+    display: grid;
+    grid-template-columns: 174px 100%;
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    font-family: Google Sans, Roboto-Medium, HelveticaNeue-Medium, Helvetica Neue, sans-serif-medium, Arial, sans-serif;
+}
+.tweak-card .card-in{
+    grid-area: 1 / 2 / 2 / 3;
+}
+.tweak-card .card-description{
+    color: #9aa0a6;
+    overflow: hidden;
+    width: 50%;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+  -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.tweak-card .card-repository{
+    grid-area: 3 / 2 / 4 / 3;
+}
+.card-name{
+    font-size: 25px;
+    margin-top: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 50%;
+}
+footer{
+    /*footerの装飾*/
+    width: 100%;
+    background-color: #171717;
+    border-top: #3c4043;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
 }
