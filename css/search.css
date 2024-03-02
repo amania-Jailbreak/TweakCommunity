@@ -16,8 +16,7 @@ body{
     color: #e8eaed;
 }
 .main{
-    padding-top: 150px;
-    text-align: center;
+    padding-top: 10px;
     min-height: 100vh;
     position: relative;/*←相対位置*/
     box-sizing: border-box;
@@ -48,7 +47,7 @@ body{
 }
 .tweak-card{
     text-align: left;
-    padding-left: 25%;
+    padding-left: 5%;
     padding-right: 25%;
     margin: 16px;
     height: 155px;
@@ -100,8 +99,7 @@ footer{
 }
 #choice{
     background-color: #303134;
-    margin-left: 25%;
-    margin-right: 25%;
+    margin-right: 5%;
     text-align: center;
     border-radius: 25px;
     padding-top: 10px;
