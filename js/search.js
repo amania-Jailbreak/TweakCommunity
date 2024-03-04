@@ -3,7 +3,7 @@ var qParameter = queryParams.get('q');
 var query = qParameter || queryParams.get('package');
 document.querySelector(".search-box").value = query;
 function get_tweak(){
-fetch(`https://api.amania.jp/search?q=${query}&sort_version=true`)
+fetch(`https://api.amania.jp/search?q=${query}&newer_only=true`)
   .then(response => response.json())
   .then(data => {
     data.forEach(tweak => {
