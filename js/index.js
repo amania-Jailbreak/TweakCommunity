@@ -26,7 +26,7 @@ fetch("https://api.amania.jp/random-tweak?count=20")
       repository.innerText = tweak.repository_name;
       repository_icon.src = tweak.repository + '/CydiaIcon.png'
       repository_icon.onerror = function(){this.onerror=null;this.src='https://repo.amania.jp/static/favicon.ico'}
-      name.href = `/search?q=${tweak.Name}`
+      name.href = `/search?q=${tweak.Package}`
       cardIn.appendChild(name);
       cardIn.appendChild(description);
       repository.prepend(repository_icon)
