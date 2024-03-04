@@ -1,7 +1,7 @@
 var queryParams = new URLSearchParams(window.location.search);
 var qParameter = queryParams.get('q');
 var query = qParameter || queryParams.get('package');
-query = 'troll'
+document.querySelector(".search-box").value = query;
 function get_tweak(){
 fetch(`https://api.amania.jp/search?q=${query}&sort_version=true`)
   .then(response => response.json())
@@ -28,7 +28,6 @@ fetch(`https://api.amania.jp/search?q=${query}&sort_version=true`)
       name.innerText = tweak.Name.replace(/\r/g,'');
       description.innerText = tweak.Description.replace(/\r/g,'');
       repository.innerText = tweak.repository_name.replace(/\r/g,'') + ' | ';
-      console.log(tweak.repository.replace(/\r/g,''))
       repository_icon.src = tweak.repository.replace(/\r/g,'') + '/CydiaIcon.png'
       repository_icon.onerror = function(){this.onerror=null;this.src='https://repo.amania.jp/static/favicon.ico'}
       const architecture = document.createElement('span')
