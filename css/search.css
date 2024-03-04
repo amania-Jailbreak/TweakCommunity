@@ -50,7 +50,7 @@ body{
     padding-left: 5%;
     padding-right: 25%;
     margin: 16px;
-    height: 155px;
+    max-height: 155px;
     display: grid;
     grid-template-columns: 174px 100%;
     grid-template-rows: repeat(3, 1fr);

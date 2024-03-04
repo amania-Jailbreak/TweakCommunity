@@ -1,9 +1,13 @@
+var queryParams = new URLSearchParams(window.location.search);
+var qParameter = queryParams.get('q');
+var query = qParameter || queryParams.get('package');
+query = 'troll'
 function get_tweak(){
-fetch("https://api.amania.jp/random-tweak?count=20")
+fetch(`https://api.amania.jp/search?q=${query}&sort_version=true`)
   .then(response => response.json())
   .then(data => {
     data.forEach(tweak => {
-        const container = document.getElementsByClassName("sileo-featured")[0];
+      const container = document.getElementsByClassName("sileo-featured")[0];
       const card = document.createElement("div");
       card.classList.add("tweak-card");
       const img = document.createElement("img");
@@ -23,17 +27,32 @@ fetch("https://api.amania.jp/random-tweak?count=20")
       repository.classList.add("card-repository");
       name.innerText = tweak.Name;
       description.innerText = tweak.Description;
-      repository.innerText = tweak.repository_name;
+      repository.innerText = tweak.repository_name + ' | ';
       repository_icon.src = tweak.repository + '/CydiaIcon.png'
       repository_icon.onerror = function(){this.onerror=null;this.src='https://repo.amania.jp/static/favicon.ico'}
-      name.href = `/search?q=${tweak.Name}`
+      const architecture = document.createElement('span')
+      architecture.classList.add('card-architecture')
+      architecture.innerText =  tweak.Architecture
+      if (tweak.Architecture == 'iphoneos-arm64'){
+        architecture.style.color = 'green'
+      } else if (tweak.Architecture == 'iphoneos-arm'){
+        architecture.style.color = 'red'
+      } else  if (tweak.Architecture == 'iphoneos-arm64e'){
+        architecture.style.color = 'blue'
+      } else {
+        architecture.style.color = 'purple'
+      }
+      name.href = `/package?q=${tweak.Name}`
       cardIn.appendChild(name);
       cardIn.appendChild(description);
       repository.prepend(repository_icon)
       card.appendChild(img);
       card.appendChild(cardIn);
+      repository.appendChild(architecture)
       card.appendChild(repository);
       container.appendChild(card);
+      const label = document.getElementById('label')
+      label.innerText = query
     });
   })
   .catch(error => {
@@ -41,35 +60,3 @@ fetch("https://api.amania.jp/random-tweak?count=20")
   });
 }
 get_tweak()
-const input = document.getElementsByClassName('search-box')[0];
-input.addEventListener("input", (e) => {
-  console.log("INPUT:" + e.target.value);
-  fetch(`https://api.amania.jp/choice?text=${e.target.value}`)
-  .then(response => response.json())
-  .then(data => {
-    const choice = document.getElementById('choice');
-    choice.innerHTML = null
-    data.forEach(tweak => {
-      const couho = document.createElement('a')
-      couho.innerText = tweak + '\n'
-      couho.href = `/search?q=${tweak}`
-      choice.appendChild(couho)
-    })
-})});
-
-window.addEventListener('scroll', () => {
-    const scrollHeight = Math.max(
-      document.body.scrollHeight, document.documentElement.scrollHeight,
-      document.body.offsetHeight, document.documentElement.offsetHeight,
-      document.body.clientHeight, document.documentElement.clientHeight
-    );
-    
-    // 一番下までスクロールした時の数値を取得(window.innerHeight分(画面表示領域分)はスクロールをしないため引く)
-    const pageMostBottom = scrollHeight - window.innerHeight;
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    // iosはバウンドするので、無難に `>=` にする
-    if (scrollTop >= pageMostBottom) {
-        get_tweak()
-    }
-});
