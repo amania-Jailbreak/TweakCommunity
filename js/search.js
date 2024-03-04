@@ -25,14 +25,14 @@ fetch(`https://api.amania.jp/search?q=${query}&sort_version=true`)
       const repository_icon = document.createElement('img')
       repository_icon.classList.add('card-repo-icon')
       repository.classList.add("card-repository");
-      name.innerText = tweak.Name.replace(/<br>/g,'');
-      description.innerText = tweak.Description.replace(/<br>/g,'');
-      repository.innerText = tweak.repository_name.replace(/<br>/g,'') + ' | ';
-      repository_icon.src = tweak.repository.replace(/<br>/g,'') + '/CydiaIcon.png'
+      name.innerText = tweak.Name.replace(/\r/g,'');
+      description.innerText = tweak.Description.replace(/\r/g,'');
+      repository.innerText = tweak.repository_name.replace(/\r/g,'') + ' | ';
+      repository_icon.src = tweak.repository.replace(/\r/g,'') + '/CydiaIcon.png'
       repository_icon.onerror = function(){this.onerror=null;this.src='https://repo.amania.jp/static/favicon.ico'}
       const architecture = document.createElement('span')
       architecture.classList.add('card-architecture')
-      architecture.innerText =  tweak.Architecture.replace(/<br>/g,'')
+      architecture.innerText =  tweak.Architecture.replace(/\r/g,'')
       if (tweak.Architecture == 'iphoneos-arm64'){
         architecture.style.color = 'green'
       } else if (tweak.Architecture == 'iphoneos-arm'){
