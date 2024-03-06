@@ -121,7 +121,6 @@ fetch(`https://api.amania.jp/package-search?q=com.opa334.crane`)
         packageDescriptionP.textContent = tweak.Description;
         packageDescriptionDiv.appendChild(packageDescriptionP);
         mainDiv.appendChild(packageDescriptionDiv);
-        mainDiv.appendChild(packageVersionsDiv);
 
     })
   .catch(error => {
