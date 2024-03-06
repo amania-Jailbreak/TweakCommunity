@@ -114,6 +114,9 @@ footer{
     text-decoration: none;
 }
 @media (max-width: 1200px) {
+    #label{
+        font-size: 100px;
+    }
     .search-box{
         width: 90%;
         height: 80px;
@@ -124,6 +127,7 @@ footer{
         padding-left: 5%;
         height: 280px;
         grid-template-columns: 290px 100%;
+        margin-right: 0;
     }
 
     .card-in{
@@ -136,6 +140,9 @@ footer{
         display: inline-block;
         font-size: 30px;
         width: 70%;
+    }
+    .tweak-card{
+        width: 90%;
     }
     #choice{
         margin-left: 5%;
