@@ -28,15 +28,18 @@ body{
 }
 #package-info{
     display: grid;
-    grid-template-columns: 1fr 2fr;
     align-items: center;
     margin-top: 20px;
-
+    grid-template-columns: 120px 2fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
 }
 #package-info img{
     width: 100px;
     height: 100px;
     border-radius: 25px;
+    grid-area: 1/1/4/2;
 }
 #package_header{
     width: 100%;
