@@ -144,6 +144,12 @@ fetch(`https://api.amania.jp/package-search?q=com.opa334.crane`)
         packageDescriptionP.id = 'package_description_text';
         packageDescriptionP.textContent = tweak.Description;
         packageDescriptionDiv.appendChild(packageDescriptionP);
+        const packagedownload = document.createElement('div');
+        packagedownload.classList.add('Download');
+        const downloadh1 = document.createElement('h1');
+        downloadh1.textContent = 'Downloads';
+        packagedownload.appendChild(downloadh1);
+        mainDiv.appendChild(packagedownload);
         mainDiv.appendChild(packageDescriptionDiv);
         insertDownloads(data);
     })
