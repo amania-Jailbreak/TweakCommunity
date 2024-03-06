@@ -27,9 +27,6 @@ async function fetchJsonFromUrl(url) {
       return;
     }
   
-    // Clear existing content
-    downloadsDiv.innerHTML = '';
-  
     const list = await createVersionArchitectureFilenameList(data);
   
     list.forEach(([Version, Architecture, Filename]) => {
