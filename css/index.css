@@ -113,3 +113,12 @@ footer{
     color: #e8eaed;
     text-decoration: none;
 }
+@media (max-width: 1200px) {
+    .search-box{
+        width: 90%;
+    }
+    .tweak-card{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
