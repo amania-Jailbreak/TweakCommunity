@@ -14,6 +14,32 @@ async function fetchJsonFromUrl(url) {
       return null;
     }
   }
+  async function createVersionArchitectureFilenameList(data) {
+    const list = data.map(tweak => {
+      return [tweak.Version, tweak.Architecture, tweak.Filename];
+    });
+    return list;
+  }
+  async function insertDownloads(data) {
+    const downloadsDiv = document.querySelector('.Downloads');
+    if (!downloadsDiv) {
+      console.error('Downloads class not found');
+      return;
+    }
+  
+    // Clear existing content
+    downloadsDiv.innerHTML = '';
+  
+    const list = await createVersionArchitectureFilenameList(data);
+  
+    list.forEach(([Version, Architecture, Filename]) => {
+      const link = document.createElement('a');
+      link.href = Filename; // Assuming Filename is a direct link to the file
+      link.textContent = `${Version} | ${Architecture}`;
+      downloadsDiv.appendChild(link);
+      downloadsDiv.appendChild(document.createElement('br')); // Add a line break for readability
+    });
+  }
   
   async function getTweakHeaderImage(tweak) {
     if (!tweak.SileoDepiction) {
@@ -29,6 +55,7 @@ async function fetchJsonFromUrl(url) {
       return 'https://repo.amania.jp/static/bernar.png'; // Default image if headerImage is not found
     }
   }
+
   async function fetchScreenshotUrlsFromDepiction(depictionUrl) {
     try {
       const depictionData = await fetchJsonFromUrl(depictionUrl);
@@ -121,7 +148,7 @@ fetch(`https://api.amania.jp/package-search?q=com.opa334.crane`)
         packageDescriptionP.textContent = tweak.Description;
         packageDescriptionDiv.appendChild(packageDescriptionP);
         mainDiv.appendChild(packageDescriptionDiv);
-
+        insertDownloads(data);
     })
   .catch(error => {
     console.error('Error:', error);
