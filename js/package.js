@@ -29,6 +29,32 @@ async function fetchJsonFromUrl(url) {
       return 'https://repo.amania.jp/static/bernar.png'; // Default image if headerImage is not found
     }
   }
+  async function fetchScreenshotUrlsFromDepiction(depictionUrl) {
+    try {
+      const depictionData = await fetchJsonFromUrl(depictionUrl);
+      const screenshotUrls = [];
+  
+      // Iterate through the tabs array
+      depictionData.tabs.forEach(tab => {
+        // Iterate through the views array within each tab
+        tab.views.forEach(view => {
+          // Check if the view class is DepictionScreenshotsView
+          if (view.class === "DepictionScreenshotsView") {
+            // Iterate through the screenshots array within the view
+            view.screenshots.forEach(screenshot => {
+              // Add the screenshot URL to the screenshotUrls array
+              screenshotUrls.push(screenshot.url);
+            });
+          }
+        });
+      });
+  
+      return screenshotUrls;
+    } catch (error) {
+      console.error('Error fetching or processing screenshots:', error);
+      return [];
+    }
+  }
   async function addScreenshotsToPage(tweak, shotsDiv) {
     const screenshotUrls = await fetchScreenshotUrlsFromDepiction(tweak.SileoDepiction);
   
