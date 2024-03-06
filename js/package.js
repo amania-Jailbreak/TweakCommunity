@@ -3,7 +3,7 @@ var qParameter = queryParams.get('q');
 var query = qParameter || queryParams.get('package');
 async function fetchJsonFromUrl(url) {
     try {
-      const response = await fetch(url);
+      const response = await fetch("https://api.amania.jp/cors-bypass?url=" + url);
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
