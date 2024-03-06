@@ -1,0 +1,47 @@
+body{
+    background-color: #202124;
+    color: #e8eaed;
+    
+}
+.navbar{
+    padding-left:15px;
+    padding-right:15px;
+    font-size: 20px;
+}
+.navbar-brand{
+    font-size: 25px;
+}
+.bg-dark{
+    background-color: #202124;
+    color: #e8eaed;
+}
+.main{
+    padding-top: 10px;
+    text-align: left;
+    min-height: 100vh;
+    position: relative;/*←相対位置*/
+    box-sizing: border-box;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: left;
+    
+}
+#package-info{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    margin-top: 20px;
+
+}
+#package-info img{
+    width: 100px;
+    height: 100px;
+    border-radius: 25px;
+}
+#package_header{
+    width: 100%;
+    max-height: 300px;
+    border-radius: 50px;
+    object-fit: cover;
+}
+
