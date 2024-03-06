@@ -23,7 +23,6 @@ body{
     box-sizing: border-box;
     margin-left: 10%;
     margin-right: 10%;
-    text-align: left;
     
 }
 #package-info{
@@ -70,5 +69,20 @@ body{
     object-fit: cover;
     border-radius: 0.75rem;
     padding-left: 5px;
+}
+.download_link{
+    text-decoration: none;
+    color: #e8eaed;
+    background-color: #3a75cd;
+    border-radius: 10px;
+    padding: 6px;
+    text-align: center;
+    display: block;
+}
+.download_link:hover{
+    background-color: #3a75cd;
+    color: #e8eaed;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
 }
 
