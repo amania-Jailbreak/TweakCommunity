@@ -85,7 +85,6 @@ fetch(`https://api.amania.jp/package-search?q=com.opa334.crane`)
         packageScreenshotsDiv.id = 'package-screenshots';
         const shotsDiv = document.createElement('div');
         shotsDiv.id = 'shots';
-        shotsDiv.appendChild(screenshotImg);
         packageScreenshotsDiv.appendChild(shotsDiv);
         mainDiv.appendChild(packageScreenshotsDiv);
         await addScreenshotsToPage(tweak, shotsDiv);
