@@ -42,7 +42,7 @@ fetch(`https://api.amania.jp/search?q=${query}&newer_only=true`)
       } else {
         architecture.style.color = 'purple'
       }
-      name.href = `/package?q=${tweak.Name}`
+      name.href = `/package?q=${tweak.Package}`
       cardIn.appendChild(name);
       cardIn.appendChild(description);
       repository.prepend(repository_icon)
