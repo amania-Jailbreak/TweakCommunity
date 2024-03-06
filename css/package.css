@@ -35,6 +35,13 @@ body{
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 }
+#package-info p{
+    margin: 0;
+    padding: 0;
+}
+#package-info h3{
+    margin-bottom: 0px;
+}
 #package-info img{
     width: 100px;
     height: 100px;
