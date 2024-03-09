@@ -7,27 +7,33 @@
         <link rel="stylesheet" href="./css/search.css"/>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <a class="navbar-brand" href="/">
-                <img src="favicon.ico" width="40" height="40" class="d-inline-block align-top" style="border-radius: 5px;">
-                TweakCommunity
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="#">TweakCommunity</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login">Account</a>
-                    </li>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/about">about</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Account</a>
+                  </li>
                 </ul>
-    
+                <form action="/search" method="get" >
+                    <div>
+                        <input class="search-box-nav" type="text" name="q" placeholder="Search"  autocomplete="off" onkeydown="if(event.key==='Enter'){this.form.submit();return false;}">
+                    </div>
+                </form>
+              </div>
             </div>
-        </nav>
+          </nav>
           <div class="main">
             <h1 style="padding-left: 5%;" id="label">Searching</h1>
             <form action="/search" method="get" style="padding-left: 5%;">
@@ -48,6 +54,6 @@
         <p>©2023 TweakCommunity</p>
         <a href="/about" style="color: #e8eaed;">about</a>
         <a href="/License" style="color: #e8eaed;">License</a>
-        <a href="https://api.amania.jp/">Docs</a>
+        <a href="https://api.amania.jp/" style="color: #e8eaed;">Docs</a>
       </footer>
 </html>

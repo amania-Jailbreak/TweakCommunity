@@ -37,6 +37,17 @@ body{
     margin-bottom: 25px;
     
 }
+.search-box-nav{
+    color: #e8eaed;
+    background-color: transparent;
+    text-align: center;
+    border: 10px;
+    border: 1px solid #5f6368;
+    border-radius: 30px;
+    font-size: 20px;
+    height: 38px;
+    width: 100%;
+}
 .tweak-card .card-img{
     width: 97.6%;
     height: 100%;
@@ -113,11 +124,17 @@ footer{
     color: #e8eaed;
     text-decoration: none;
 }
-@media (max-width: 1200px) {
+@media screen and (max-width: 990px) and (hover: none) and (pointer: coarse) {
     #label{
         font-size: 100px;
     }
     .search-box{
+        width: 90%;
+        height: 80px;
+        border-radius: 500px;
+        font-size: 45px;
+    }
+    .search-box-nav{
         width: 90%;
         height: 80px;
         border-radius: 500px;
@@ -166,6 +183,9 @@ footer{
         margin-right: 15px;
     }
     .card-repository{
+        font-size: 30px;
+    }
+    footer{
         font-size: 30px;
     }
 }
