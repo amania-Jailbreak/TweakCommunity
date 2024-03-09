@@ -85,7 +85,17 @@ body{
     transform: scale(1.1);
     transition: transform 0.3s ease;
 }
-
+.search-box-nav{
+    color: #e8eaed;
+    background-color: transparent;
+    text-align: center;
+    border: 10px;
+    border: 1px solid #5f6368;
+    border-radius: 30px;
+    font-size: 20px;
+    height: 38px;
+    width: 100%;
+}
 @media screen and (max-width: 990px) and (hover: none) and (pointer: coarse) {
     #label{
         font-size: 100px;
@@ -150,15 +160,4 @@ body{
     footer{
         font-size: 30px;
     }
-}
-.search-box-nav{
-    color: #e8eaed;
-    background-color: transparent;
-    text-align: center;
-    border: 10px;
-    border: 1px solid #5f6368;
-    border-radius: 30px;
-    font-size: 20px;
-    height: 38px;
-    width: 100%;
 }

@@ -37,6 +37,17 @@ body{
     margin-bottom: 25px;
     
 }
+.search-box-nav{
+    color: #e8eaed;
+    background-color: transparent;
+    text-align: center;
+    border: 10px;
+    border: 1px solid #5f6368;
+    border-radius: 30px;
+    font-size: 20px;
+    height: 38px;
+    width: 100%;
+}
 .card-img{
     width: 97.6%;
     height: 100%;
@@ -50,7 +61,7 @@ body{
     padding-left: 5%;
     padding-right: 25%;
     margin: 16px;
-    max-height: 155px;
+    max-height: 283px;
     display: grid;
     grid-template-columns: 174px 100%;
     grid-template-rows: repeat(3, 1fr);
@@ -72,6 +83,8 @@ body{
 }
 .tweak-card .card-repository{
     grid-area: 3 / 2 / 4 / 3;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .card-name{
     font-size: 25px;
@@ -174,15 +187,4 @@ footer{
     footer{
         font-size: 30px;
     }
-}
-.search-box-nav{
-    color: #e8eaed;
-    background-color: transparent;
-    text-align: center;
-    border: 10px;
-    border: 1px solid #5f6368;
-    border-radius: 30px;
-    font-size: 20px;
-    height: 38px;
-    width: 100%;
 }
