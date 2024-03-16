@@ -61,7 +61,7 @@ body{
     padding-left: 5%;
     padding-right: 25%;
     margin: 16px;
-    max-height: 283px;
+    max-height: 157px;
     display: grid;
     grid-template-columns: 174px 100%;
     grid-template-rows: repeat(3, 1fr);
@@ -159,6 +159,7 @@ footer{
     }
     .tweak-card{
         width: 90%;
+        max-height: 283px;
     }
     #choice{
         margin-left: 5%;
