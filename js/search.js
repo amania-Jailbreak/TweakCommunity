@@ -13,7 +13,7 @@ fetch(`https://api.amania.jp/search?q=${query}&newer_only=true`)
       const img = document.createElement("img");
       img.classList.add("card-img");
       img.src = tweak.Icon;
-      img.onerror = function(){this.onerror=null;this.src='https://repo.amania.jp/static/bernar.png'}
+      img.onerror = function(){this.onerror=null;this.src='/img/bernar.png'}
       const cardIn = document.createElement("div");
       cardIn.classList.add("card-in");
       const name = document.createElement("a");
@@ -29,7 +29,7 @@ fetch(`https://api.amania.jp/search?q=${query}&newer_only=true`)
       description.innerText = tweak.Description.replace(/\r/g,'');
       repository.innerText = tweak.repository_name.replace(/\r/g,'') + ' | ';
       repository_icon.src = tweak.repository.replace(/\r/g,'') + '/CydiaIcon.png'
-      repository_icon.onerror = function(){this.onerror=null;this.src='https://repo.amania.jp/static/favicon.ico'}
+      repository_icon.onerror = function(){this.onerror=null;this.src='favicon.ico'}
       const architecture = document.createElement('span')
       architecture.classList.add('card-architecture')
       architecture.innerText =  tweak.Architecture.replace(/\r/g,'')

@@ -9,7 +9,7 @@ fetch("https://api.amania.jp/random-tweak?count=20")
       const img = document.createElement("img");
       img.classList.add("card-img");
       img.src = tweak.Icon;
-      img.onerror = function(){this.onerror=null;this.src='https://repo.amania.jp/static/bernar.png'}
+      img.onerror = function(){this.onerror=null;this.src='/img/bernar.png'}
       const cardIn = document.createElement("div");
       cardIn.classList.add("card-in");
       const name = document.createElement("a");
@@ -25,7 +25,7 @@ fetch("https://api.amania.jp/random-tweak?count=20")
       description.innerText = tweak.Description;
       repository.innerText = tweak.repository_name;
       repository_icon.src = tweak.repository + '/CydiaIcon.png'
-      repository_icon.onerror = function(){this.onerror=null;this.src='https://repo.amania.jp/static/favicon.ico'}
+      repository_icon.onerror = function(){this.onerror=null;this.src='favicon.ico'}
       name.href = `/package?q=${tweak.Package}`
       cardIn.appendChild(name);
       cardIn.appendChild(description);
