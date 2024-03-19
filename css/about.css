@@ -86,6 +86,11 @@ body{
     color: #e8eaed;
     text-decoration: none;
 }
+a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: block;
+}
 footer{
     /*footerの装飾*/
     width: 100%;
