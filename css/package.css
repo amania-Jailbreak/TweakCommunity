@@ -96,9 +96,68 @@ footer{
     text-align: center;
     padding: 30px 0;
 }
+.tweak-card .card-img{
+    width: 155px;
+    height: 155px;
+    border-radius: 26px;
+    grid-area: 1 / 1 / 4 / 2;
+    object-fit: cover;
+    padding-right: 10px;
+}
+.tweak-card{
+    text-align: left;
+    max-width:155px;
+    height: 360px;
+    display: grid inline;
+    grid-template-columns: 1;
+    grid-template-rows: repeat(5,1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    font-family: Google Sans, Roboto-Medium, HelveticaNeue-Medium, Helvetica Neue, sans-serif-medium, Arial, sans-serif;
+}
+.tweak-card .card-in{
+    grid-area: 3 / 1 / 5 / 2;
+}
+
+.tweak-card .card-description{
+    color: #9aa0a6;
+    overflow: hidden;
+    width: 155px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.tweak-card .card-repository{
+    grid-area: 5 / 1 / 5 / 2;
+}
+.card-name{
+    font-size: 25px;
+    margin-top: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 155px;
+    color: #e8eaed;
+    text-decoration: none;
+    display: inline-block;
+}
+.card-repo-icon{
+    width: 30px;
+    border-radius: 9999px;
+    margin-right: 15px;
+}
+.Downloads{
+    margin-bottom: 100px;
+}
 @media screen and (max-width: 990px) and (hover: none) and (pointer: coarse) {
     #label{
         font-size: 100px;
+    }
+    .btn{
+        font-size: 50px;
+        height: 100%;
+        width: 100%;
     }
     .main{
         margin-left: 5%;

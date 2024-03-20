@@ -32,7 +32,7 @@ async function fetchJsonFromUrl(url) {
       const link = document.createElement('button');
       link.textContent = `${Version} | ${Architecture}`;
       link.classList.add('btn');
-      link.classList.add('btn-primary');
+      link.classList.add('btn-secondary');
       link.onclick = function(){location.href=Filename}
       downloadsDiv.appendChild(link);
     });
@@ -93,10 +93,57 @@ async function fetchJsonFromUrl(url) {
         const screenshotImg = document.createElement('img');
         screenshotImg.src = url;
         screenshotImg.classList.add('package_screenshots_img'); // Consider using class for styling instead of id
-        shotsDiv.appendChild(screenshotImg);
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('data-lightbox', 'group');
+        link.appendChild(screenshotImg);
+        shotsDiv.appendChild(link);
       });
     }
   }
+  function get_others(){
+    fetch("https://api.amania.jp/random-tweak?count=10")
+      .then(response => response.json())
+      .then(data => {
+        
+        data.forEach(tweak => {
+          const container = document.getElementsByClassName("sileo-featured")[0];
+          const card = document.createElement("div");
+          card.classList.add("tweak-card");
+          const img = document.createElement("img");
+          img.classList.add("card-img");
+          img.src = tweak.Icon;
+          img.onerror = function(){this.onerror=null;this.src='/img/bernar.png'}
+          const cardIn = document.createElement("div");
+          cardIn.classList.add("card-in");
+          const name = document.createElement("a");
+          name.classList.add("card-name");
+          name.style.marginBottom = "0px";
+          const description = document.createElement("p");
+          description.classList.add("card-description");
+          const repository = document.createElement("p");
+          const repository_icon = document.createElement('img')
+          repository_icon.classList.add('card-repo-icon')
+          repository.classList.add("card-repository");
+          name.innerText = tweak.Name;
+          description.innerText = tweak.Description;
+          repository.innerText = tweak.repository_name;
+          repository_icon.src = tweak.repository + '/CydiaIcon.png'
+          repository_icon.onerror = function(){this.onerror=null;this.src='favicon.ico'}
+          name.href = `/package?q=${tweak.Package}`
+          cardIn.appendChild(name);
+          cardIn.appendChild(description);
+          repository.prepend(repository_icon)
+          card.appendChild(img);
+          card.appendChild(cardIn);
+          card.appendChild(repository);
+          container.appendChild(card);
+        });
+      })
+      .catch(error => {
+        console.error(error);
+      });
+    }
 function get_tweak(){
 fetch(`https://api.amania.jp/package-search?q=${query}`)
   .then(response => response.json())
@@ -157,7 +204,13 @@ fetch(`https://api.amania.jp/package-search?q=${query}`)
         packagedownload.appendChild(downloadh1);
         mainDiv.appendChild(packageDescriptionDiv);
         mainDiv.appendChild(packagedownload);
-        
+        const container = document.createElement('div');
+        container.classList.add('sileo-featured')
+        const list = document.createElement('h1');
+        list.textContent = 'Other Tweaks';
+        mainDiv.appendChild(list);
+        mainDiv.appendChild(container)
+        get_others()
         insertDownloads(data);
     })
   .catch(error => {
@@ -165,3 +218,4 @@ fetch(`https://api.amania.jp/package-search?q=${query}`)
   });
 }
 get_tweak()
+
