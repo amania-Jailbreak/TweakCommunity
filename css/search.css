@@ -59,10 +59,10 @@ body{
 .tweak-card{
     text-align: left;
     padding-left: 5%;
-    padding-right: 25%;
     margin: 16px;
     max-height: 157px;
-    display: grid;
+    display: grid inline;
+    width: 500px;
     grid-template-columns: 174px 100%;
     grid-template-rows: repeat(3, 1fr);
     grid-column-gap: 0px;

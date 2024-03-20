@@ -29,12 +29,12 @@ async function fetchJsonFromUrl(url) {
     const list = (await createVersionArchitectureFilenameList(data)).reverse();
   
     list.forEach(([Version, Architecture, Filename]) => {
-      const link = document.createElement('a');
-      link.href = Filename; // Assuming Filename is a direct link to the file
+      const link = document.createElement('button');
       link.textContent = `${Version} | ${Architecture}`;
-      link.classList.add('download_link');
+      link.classList.add('btn');
+      link.classList.add('btn-primary');
+      link.onclick = function(){location.href=Filename}
       downloadsDiv.appendChild(link);
-      downloadsDiv.appendChild(document.createElement('br')); // Add a line break for readability
     });
   }
   
@@ -149,6 +149,9 @@ fetch(`https://api.amania.jp/package-search?q=${query}`)
         packageDescriptionDiv.appendChild(packageDescriptionP);
         const packagedownload = document.createElement('div');
         packagedownload.classList.add('Downloads');
+        packagedownload.classList.add('d-grid');
+        packagedownload.classList.add('gap-2');
+        packagedownload.classList.add('d-md-block');
         const downloadh1 = document.createElement('h1');
         downloadh1.textContent = 'Downloads';
         packagedownload.appendChild(downloadh1);

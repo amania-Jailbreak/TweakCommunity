@@ -70,20 +70,11 @@ body{
     border-radius: 0.75rem;
     padding-left: 5px;
 }
-.download_link{
-    text-decoration: none;
-    color: #e8eaed;
-    background-color: #3a75cd;
-    border-radius: 10px;
-    padding: 6px;
-    text-align: center;
-    display: block;
-}
-.download_link:hover{
-    background-color: #3a75cd;
-    color: #e8eaed;
-    transform: scale(1.1);
-    transition: transform 0.3s ease;
+.btn{
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 250px;
+    height: 65px;
 }
 .search-box-nav{
     color: #e8eaed;
@@ -97,8 +88,13 @@ body{
     width: 100%;
 }
 footer{
-    font-size: 30px;
+    /*footerの装飾*/
+    width: 100%;
+    background-color: #171717;
+    border-top: #3c4043;
+    color: #e8eaed;
     text-align: center;
+    padding: 30px 0;
 }
 @media screen and (max-width: 990px) and (hover: none) and (pointer: coarse) {
     #label{
