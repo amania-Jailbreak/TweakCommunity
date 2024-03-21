@@ -213,6 +213,8 @@ fetch(`https://api.amania.jp/package-search?q=${query}`)
         mainDiv.appendChild(container)
         get_others()
         insertDownloads(data);
+        const loading = document.getElementById('loading')
+        loading.style.display = 'none'
     })
   .catch(error => {
     console.error('Error:', error);
