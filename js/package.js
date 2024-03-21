@@ -208,6 +208,7 @@ fetch(`https://api.amania.jp/package-search?q=${query}`)
         container.classList.add('sileo-featured')
         const list = document.createElement('h1');
         list.textContent = 'Other Tweaks';
+        list.id = 'othertweak'
         mainDiv.appendChild(list);
         mainDiv.appendChild(container)
         get_others()

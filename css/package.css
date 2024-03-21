@@ -154,6 +154,14 @@ footer{
     #label{
         font-size: 100px;
     }
+    .tweak-card .card-img{
+        width: 220px;
+        height: 220px;
+        border-radius: 26px;
+        grid-area: 1 / 1 / 4 / 2;
+        object-fit: cover;
+        padding-right: 10px;
+    }
     .btn{
         font-size: 50px;
         height: 100%;
@@ -207,22 +215,26 @@ footer{
         font-size: 45px;
     }
     .tweak-card{
-        padding-left: 5%;
-        height: 280px;
+        height: 550px;
+        max-width: 220px;
         grid-template-columns: 290px 100%;
         margin-right: 0;
     }
-
+    #othertweak{
+        font-size: 60px;
+    }
     .card-in{
         display: inline-block;
+        width: 220px;
     }
     .card-name{
         font-size: 50px;
+        width: 220px;
     }
     .card-description{
         display: inline-block;
         font-size: 30px;
-        width: 70%;
+        width: 220px;
     }
     .tweak-card{
         width: 90%;
@@ -250,6 +262,7 @@ footer{
     }
     .card-repository{
         font-size: 30px;
+        width: 220px;
     }
     footer{
         font-size: 30px;
