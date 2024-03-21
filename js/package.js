@@ -161,11 +161,12 @@ fetch(`https://api.amania.jp/package-search?q=${query}`)
         packageIconImg.src = tweak.Icon || 'favicon.ico';
         packageIconImg.id = 'package_icon';
         packageInfoDiv.appendChild(packageIconImg);
-        document.getElementById('og-image').content = tweak.Icon;
+        document.getElementById('og:image').content = tweak.Icon;
         const packageNameH3 = document.createElement('h3');
         packageNameH3.id = 'package_name';
         packageNameH3.textContent = tweak.Name;
         document.getElementById('og-title').content = tweak.Name + ' | TweakCommunity';
+        document.getElementById('og:site_name').content = tweak.Name + ' | TweakCommunity';
         document.title = tweak.Name + ' | TweakCommunity';
         packageInfoDiv.appendChild(packageNameH3);
         const packageAuthorP = document.createElement('p');
