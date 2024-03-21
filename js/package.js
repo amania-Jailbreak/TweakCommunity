@@ -1,6 +1,29 @@
 var queryParams = new URLSearchParams(window.location.search);
 var qParameter = queryParams.get('q');
 var query = qParameter || queryParams.get('package');
+function sleep(waitSec, callbackFunc) {
+
+  // 経過時間（秒）
+  var spanedSec = 0;
+
+  // 1秒間隔で無名関数を実行
+  var id = setInterval(function () {
+
+      spanedSec++;
+
+      // 経過時間 >= 待機時間の場合、待機終了。
+      if (spanedSec >= waitSec) {
+
+          // タイマー停止
+          clearInterval(id);
+
+          // 完了時、コールバック関数を実行
+          if (callbackFunc) callbackFunc();
+      }
+  }, 1000);
+
+}
+
 async function fetchJsonFromUrl(url) {
     try {
       const response = await fetch("https://api.amania.jp/cors-bypass?url=" + url);
@@ -222,4 +245,3 @@ fetch(`https://api.amania.jp/package-search?q=${query}`)
   });
 }
 get_tweak()
-
