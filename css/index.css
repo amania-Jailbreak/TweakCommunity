@@ -149,9 +149,11 @@ footer{
 
     .card-in{
         display: inline-block;
+        width:500px;
     }
     .card-name{
         font-size: 50px;
+        width:500px;
     }
     .card-description{
         display: inline-block;
@@ -184,6 +186,7 @@ footer{
     }
     .card-repository{
         font-size: 30px;
+        width: 300px;
     }
     footer{
         font-size: 30px;
