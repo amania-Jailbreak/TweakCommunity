@@ -72,7 +72,7 @@ async function fetchJsonFromUrl(url) {
       return depictionData.headerImage;
     } else {
       console.error('Header image not found in SileoDepiction');
-      return 'https://repo.amania.jp/static/bernar.png'; // Default image if headerImage is not found
+      return '/img/bernar.png'; // Default image if headerImage is not found
     }
   }
 
