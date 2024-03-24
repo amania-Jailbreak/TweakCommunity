@@ -64,7 +64,7 @@ async function fetchJsonFromUrl(url) {
   async function getTweakHeaderImage(tweak) {
     if (!tweak.SileoDepiction) {
       console.error('SileoDepiction URL is missing');
-      return 'https://repo.amania.jp/static/bernar.png'; // Default image if SileoDepiction URL is missing
+      return '/img/bernar.png'; // Default image if SileoDepiction URL is missing
     }
   
     const depictionData = await fetchJsonFromUrl(tweak.SileoDepiction);
