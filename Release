@@ -1,8 +1,0 @@
-Origin: TweakCommunity
-Label: TweakCommunity
-Suite: stable
-Version: 1.0
-Codename: TC
-Architectures: iphoneos-arm iphoneos-arm64 iphoneos-arm64e appletvos-arm64 tvOS-arm
-Components: main
-Description: Tweak search engine
